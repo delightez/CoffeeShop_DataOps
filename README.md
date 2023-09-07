@@ -1,42 +1,95 @@
-# CoffeeShop_DataOps
-Centralized data for coffee shop expansion
+# Coffee Shop Database Project README
 
-# Coffee Shop Data Engineering Project
+## Overview
 
-## Introduction
+Welcome to the Coffee Shop Database project, where I, as a Data Engineer, have been tasked with designing a robust relational database system for a New York-based coffee shop chain. This project aims to streamline operations and enhance data-driven decision-making as the company expands nationally by opening franchise locations. Here, I'll provide an overview of the project's objectives, the software used, data sources, and key tasks.
 
-Welcome to the Coffee Shop Data Engineering Project! In this initiative, we aim to expand our New York-based coffee shop chain nationwide by improving operational efficiency and revamping our data infrastructure. As the Data Engineer on board, my role is to design a robust relational database system that enables data-driven decisions for our executives.
+## Objectives
 
-## Project Scope
+The main objectives of this project are:
 
-### Data Consolidation
-- Our current data landscape is diverse, including data from accounting software, suppliers' databases, point-of-sale (POS) systems, and spreadsheets. My task is to consolidate this data into a central database for unified access.
+- Design a relational database system for improved operational efficiencies.
+- Consolidate data from various sources, including spreadsheets, CSV files, and databases.
+- Normalize tables to adhere to second normal form (2NF).
+- Define primary keys and relationships between tables.
+- Create database objects, including tables, views, and materialized views.
+- Export and import data across different relational database management systems (RDBMS).
 
-### Database Design
-- I will create and implement the necessary database objects, ensuring data integrity and security in the process.
+## Software Used
 
-### Data Loading
-- Once the database structure is established, I'll develop processes to load the database with source data while maintaining data quality.
+In this project, I utilized the following RDBMS:
 
-### Data Subsetting
-- To meet the specific needs of our business partners, I'll create data subsets, export them, and prepare them for loading into staging databases with different RDBMS.
+- PostgreSQL
+- IBM Db2 Database
+- MySQL
 
-## Project Goals
+## Data Sources
 
-1. **Efficiency:** Streamline operations by centralizing data, reducing manual data handling, and automating integration.
+The data used in this project is sourced from various locations:
 
-2. **Data-Driven Decisions:** Provide executives with timely, accurate insights for informed decision-making and nationwide expansion.
+1. Staff information from a spreadsheet at headquarters.
+2. Sales outlet information from another spreadsheet at headquarters.
+3. Sales data in CSV format from the POS system in sales outlets.
+4. Customer data in CSV format from a custom Customer Relationship Management (CRM) system.
+5. Product information from a supplier's database in spreadsheet format.
 
-3. **Data Quality:** Ensure data integrity and consistency, minimizing errors and discrepancies.
+## Project Tasks
 
-4. **Scalability:** Design a system capable of scaling as our franchise network grows.
+### Task 1: Identify Entities
 
-## Repository Contents
+Entities identified for the central database design include:
 
-This GitHub repository is the central hub for our project:
+- Staff
+- Sales Outlet
+- Sales Transaction
+- Customer
+- Product
 
-- **Code:** Contains database scripts, ETL processes, and custom code.
+### Task 2: Identify Attributes
 
-- **Documentation:** Provides detailed insights into database design, data integration processes, and data subsetting procedures.
+Attributes for the "Sales Transaction" entity include:
 
-- **Resources:** Includes data dictionaries, schemas, and reference materials.
+- Transaction ID
+- Date
+- Time
+- Sales Outlet
+- Staff
+- Customer
+- Product
+- Quantity
+
+### Task 3: Create an ERD
+
+I used the pgAdmin ERD Tool to create an Entity Relationship Diagram (ERD) that includes tables like "Sales Transaction" and "Product" with their respective attributes.
+
+### Task 4: Normalize Tables
+
+I normalized tables to ensure they adhere to the second normal form (2NF). For example, I created a new table named "Sales Detail" to eliminate repeating rows in the sales transaction table.
+
+### Task 5: Define Keys and Relationships
+
+I defined primary keys for each table and established relationships between tables, such as sales detail to sales transaction.
+
+### Task 6: Create Database Objects
+
+I generated SQL scripts from the ERD and executed them in pgAdmin to create the database schema. Sample data was loaded using provided SQL scripts.
+
+### Task 7: Create a View and Export Data
+
+I created a view named "Staff Locations View" and exported the view data to a CSV file.
+
+### Task 8: Create a Materialized View and Export Data
+
+I created a materialized view named "Product Info M-View" and exported its data to a CSV file.
+
+### Task 9: Import Data into a Db2 Database
+
+I loaded staff location information into a Db2 database named "STAFF_LOCATIONS."
+
+### Task 10: Import Data into a MySQL Database
+
+I loaded product information into a MySQL database named "coffee_shop_products."
+
+Please note screenshots for each task are available in the project files.
+.
+
